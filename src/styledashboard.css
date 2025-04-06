@@ -1,51 +1,56 @@
-/* Layout setup */
-.dashboard-container {
+/* Layout */
+.tabs-container {
   display: flex;
   height: 100vh;
   font-family: sans-serif;
+  position: relative;
 }
 
-/* Sidebar Tabs */
-.tab-list {
-  background: #1e3a8a; /* blue-950 */
-  color: white;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 1rem;
-  gap: 1rem;
-}
-
-.tab-list input[type="radio"] {
+/* Hide radio inputs */
+input[type="radio"] {
   display: none;
 }
 
-.tab-list label {
-  padding: 10px 15px;
-  background: #3b82f6; /* blue-500 */
-  border-radius: 6px;
-  cursor: pointer;
-  /* transition: background 0.3s; */
+/* Sidebar labels */
+.tab-labels {
+  width: 200px;
+  background-color: #1e3a8a;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
 }
 
-.tab-list input[type="radio"]:checked + label {
-  background: #2563eb; /* blue-600 */
+.tab-labels label {
+  background-color: #3b82f6;
+  padding: 12px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input#tab1:checked ~ .tab-labels label[for="tab1"],
+input#tab2:checked ~ .tab-labels label[for="tab2"],
+input#tab3:checked ~ .tab-labels label[for="tab3"] {
+  background-color: #2563eb;
   font-weight: bold;
 }
 
-/* Tab content area */
+/* Content area */
 .tab-content {
   flex: 1;
   padding: 2rem;
-  background: #f9f9f9;
+  background-color: #f4f4f4;
 }
 
 .content {
   display: none;
 }
 
-#tab1:checked ~ .tab-content #content1,
-#tab2:checked ~ .tab-content #content2,
-#tab3:checked ~ .tab-content #content3 {
+/* Show selected content */
+input#tab1:checked ~ .tab-content .content1,
+input#tab2:checked ~ .tab-content .content2,
+input#tab3:checked ~ .tab-content .content3 {
   display: block;
 }

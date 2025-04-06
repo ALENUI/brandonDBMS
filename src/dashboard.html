@@ -8,32 +8,32 @@
     <title>dashboard</title>
   </head>
   <body>
-    <div class="dashboard-container">
-      <!-- Sidebar Tabs -->
-      <div class="tab-list">
-        <input type="radio" id="tab1" name="tab" checked />
-        <label for="tab1">Dashboard</label>
+    <div class="tabs-container">
+      <!-- Radio buttons -->
+      <input type="radio" name="tab" id="tab1" checked />
+      <input type="radio" name="tab" id="tab2" />
+      <input type="radio" name="tab" id="tab3" />
 
-        <input type="radio" id="tab2" name="tab" />
-        <label for="tab2">Task</label>
-
-        <input type="radio" id="tab3" name="tab" />
-        <label for="tab3">Profile</label>
+      <!-- Tab labels on the left -->
+      <div class="tab-labels">
+        <label for="tab1">Tab 1</label>
+        <label for="tab2">Tab 2</label>
+        <label for="tab3">Tab 3</label>
       </div>
 
-      <!-- Tab Content -->
+      <!-- Tab content on the right -->
       <div class="tab-content">
-        <div class="content" id="content1">
-          <h2>Dashboard</h2>
-          <p>This is the dashboard content.</p>
+        <div class="content content1">
+          <h2>Tab 1 Content</h2>
+          <p>This is content for Tab 1.</p>
         </div>
-        <div class="content" id="content2">
-          <h2>Settings</h2>
-          <p>This is the settings content.</p>
+        <div class="content content2">
+          <h2>Tab 2 Content</h2>
+          <p>This is content for Tab 2.</p>
         </div>
-        <div class="content" id="content3">
-          <h2>Profile</h2>
-          <p>This is the profile content.</p>
+        <div class="content content3">
+          <h2>Tab 3 Content</h2>
+          <p>This is content for Tab 3.</p>
         </div>
       </div>
     </div>
