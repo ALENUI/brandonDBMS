@@ -1,0 +1,51 @@
+/* Layout setup */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+/* Sidebar Tabs */
+.tab-list {
+  background: #1e3a8a; /* blue-950 */
+  color: white;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 1rem;
+}
+
+.tab-list input[type="radio"] {
+  display: none;
+}
+
+.tab-list label {
+  padding: 10px 15px;
+  background: #3b82f6; /* blue-500 */
+  border-radius: 6px;
+  cursor: pointer;
+  /* transition: background 0.3s; */
+}
+
+.tab-list input[type="radio"]:checked + label {
+  background: #2563eb; /* blue-600 */
+  font-weight: bold;
+}
+
+/* Tab content area */
+.tab-content {
+  flex: 1;
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.content {
+  display: none;
+}
+
+#tab1:checked ~ .tab-content #content1,
+#tab2:checked ~ .tab-content #content2,
+#tab3:checked ~ .tab-content #content3 {
+  display: block;
+}

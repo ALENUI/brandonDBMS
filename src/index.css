@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+}
+
+input {
+  outline: none;
+  border: 0;
+}
+
+body {
+  font-family: "Roboto", "Poppins";
+}
+.prim-btn {
+  @apply px-5 py-1  rounded-xl text-white bg-blue-900 hover:bg-blue-950 cursor-pointer text-center;
+}
+
+.inputfield {
+  @apply w-full py-1 px-5 border-2 border-black rounded-md;
+}
