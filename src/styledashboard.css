@@ -1,7 +1,7 @@
 /* Layout */
 .tabs-container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   font-family: sans-serif;
   position: relative;
 }
@@ -14,11 +14,15 @@ input[type="radio"] {
 /* Sidebar labels */
 .tab-labels {
   width: 200px;
+  height: 100vh;
   background-color: #1e3a8a;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   gap: 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .tab-labels label {
@@ -32,7 +36,9 @@ input[type="radio"] {
 
 input#tab1:checked ~ .tab-labels label[for="tab1"],
 input#tab2:checked ~ .tab-labels label[for="tab2"],
-input#tab3:checked ~ .tab-labels label[for="tab3"] {
+input#tab3:checked ~ .tab-labels label[for="tab3"],
+input#tab4:checked ~ .tab-labels label[for="tab4"],
+input#tab5:checked ~ .tab-labels label[for="tab5"] {
   background-color: #2563eb;
   font-weight: bold;
 }
@@ -51,6 +57,8 @@ input#tab3:checked ~ .tab-labels label[for="tab3"] {
 /* Show selected content */
 input#tab1:checked ~ .tab-content .content1,
 input#tab2:checked ~ .tab-content .content2,
-input#tab3:checked ~ .tab-content .content3 {
+input#tab3:checked ~ .tab-content .content3,
+input#tab4:checked ~ .tab-content .content4,
+input#tab5:checked ~ .tab-content .content5 {
   display: block;
 }
