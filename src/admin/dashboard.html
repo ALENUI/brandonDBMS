@@ -92,24 +92,43 @@
         <div class="content content2">
           <div>
             <h1>Register New Personnel</h1>
-            <form class="w-1/2 mx-auto border p-5 flex flex-col gap-2">
+            <form
+              method="post"
+              action="../backend/users/create.php"
+              class="w-1/2 mx-auto border p-5 flex flex-col gap-2"
+            >
               <div>
                 <label class="text-sm" for="name">Name:</label>
                 <input class="inputfield" id="name" type="text" />
               </div>
               <div>
+                <label class="text-sm" for="email">Email:</label>
+                <input class="inputfield" id="email" type="email" />
+              </div>
+              <div>
                 <label for="cat">Category</label>
-                <select id="cat" class="inputfield" name="" id="">
+                <select
+                  id="cat"
+                  class="inputfield"
+                  required
+                  name="category"
+                  id=""
+                >
                   <option value="intern">Intern</option>
                   <option value="employee">Employee</option>
                 </select>
               </div>
               <div>
                 <label for="pwd">Password</label>
-                <input type="text" id="pwd" class="inputfield" />
+                <input
+                  name="password"
+                  type="text"
+                  id="pwd"
+                  class="inputfield"
+                />
               </div>
 
-              <button class="prim-btn">ADD PERSONNEL</button>
+              <button type="submit" class="prim-btn">ADD PERSONNEL</button>
             </form>
           </div>
           <div>
@@ -197,34 +216,52 @@
         <div class="content content3">
           <h2 class="text-2xl mt-6 text-blue-950">Assign New task</h2>
           <div>
-            <form class="w-1/2 mx-auto border p-5 flex flex-col">
+            <form
+              method="POST"
+              action="../backend/tasks/create.php"
+              class="w-1/2 mx-auto border p-5 flex flex-col"
+            >
               <div>
                 <label class="text-sm" for="">Task Title:</label>
-                <input class="inputfield" type="text" />
+                <input class="inputfield" type="text" name="title" />
               </div>
               <div>
                 <label for="client">CLeint</label>
-                <input class="inputfield" type="text" id="client" />
+                <input
+                  class="inputfield"
+                  type="text"
+                  id="client"
+                  name="client"
+                />
               </div>
               <div>
                 <label for="">Assigned to</label>
-                <select class="inputfield" name="" id="">
+                <!-- <select class="inputfield" name="" id="">
                   <option value="brandon">Brandon</option>
                   <option value="brandon">Brandon</option>
                   <option value="brandon">Brandon</option>
                   <option value="brandon">Brandon</option>
-                </select>
+                </select> -->
+                <input type="text" name="user_id" class="inputfield" />
               </div>
               <div>
                 <label for="taskdetails"> Task details </label>
                 <textarea
-                  name=""
+                  name="description"
                   id="taskdetails"
                   class="inputfield"
                   rows="10"
                 ></textarea>
               </div>
-              <button class="prim-btn">ASSIGN</button>
+              <div>
+                <label for="date">Assigned date</label>
+                <input type="date" name="date" />
+              </div>
+              <div>
+                <label for="dueDate">Due Date:</label>
+                <input type="date" name="due_date" id="dueDate" />
+              </div>
+              <button type="submit" class="prim-btn">ASSIGN</button>
             </form>
           </div>
           <div class="border-t pt-10 mt-10">
